@@ -51,7 +51,7 @@ This addresses the issue because the test case `testReverse2` expected value for
 
 The depth option performs a depth-first search while traversing the directory and lists the files in depth-first search order. The depth option is useful in `find ./technical/government/Env_Prot_Agen` because it ensured the deepest files were processed first, which is beneficial for specific order of directory processing.
 
-<img width="540" alt="Screen Shot 2023-11-04 at 6 58 07 PM" src="https://github.com/shinaegyo/cse15l-lab3/assets/137027086/b81fb189-0393-4984-aa97-ee71b0c7d8d6">
+<img width="540" alt="depth option" src="https://github.com/shinaegyo/lab-report-3/assets/137027086/b874d931-25e9-4f67-941a-78cbabcff123">
 
 The depth option performs a depth-first search while traversing the directory and lists the files in depth-first search order. The depth option is useful in `find ./technical/government/About_LSC` because it ensured the deepest files were processed first, which is beneficial for specific order of directory processing.
 
