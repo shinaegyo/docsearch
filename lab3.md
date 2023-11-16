@@ -208,8 +208,12 @@ The `-s option` traverses the file hierarchies in alphabetical order within each
 
 
 ## Works Cited
-https://www.unix.com/unix-for-beginners-questions-and-answers/276933-find-depth-how-use.html
 
-https://www.tecmint.com/35-practical-examples-of-linux-find-command/
+find -depth  ..How to use it ? (n.d.). The UNIX and Linux Forums. https://www.unix.com/unix-for-beginners-questions-and-answers/276933-find-depth-how-use.html 
+(-depth option utilized this source)
 
-https://snapshooter.com/learn/linux/find
+Saive, R., & Saive, R. (2023, July 18). 35 Practical examples of Linux Find Command. 35 Practical Examples of Linux Find Command. https://www.tecmint.com/35-practical-examples-of-linux-find-command/ 
+(-name option utilized this source)
+
+Ultimate guide to Linux find command - SnapShooter Tutorials. (n.d.). https://snapshooter.com/learn/linux/find
+(-type option utilized this source)
