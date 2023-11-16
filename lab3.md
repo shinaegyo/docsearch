@@ -31,12 +31,28 @@
 
 `Before`
 
-<img width="377" alt="Screen Shot 2023-11-03 at 3 37 59 PM" src="https://github.com/shinaegyo/cse15l-lab3/assets/137027086/d43f5271-5070-4832-a039-83b0d0641cab">
+```
+static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = newArray[arr.length - i - 1];
+    }
+    return arr;
+  }
+```
 
 
 `After`
 
-<img width="379" alt="Screen Shot 2023-11-03 at 3 38 31 PM" src="https://github.com/shinaegyo/cse15l-lab3/assets/137027086/8520eb28-5902-45f9-9ec8-51af60c33ed1">
+```
+static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      newArray[i] = arr[arr.length - i - 1];
+    }
+    return newArray;
+  }
+```
 
 
 This addresses the issue because the test case `testReverse2` expected value for it to pass can only be {0,0,0,0} and no positive values. This is because the newArray object that was created sets every index value to 0 and setting arr[i] = to newArray times anything will set the indexes of arr[i] to 0. Therefore, setting newArray[i] = arr[arr.length - i - 1] will also set up a new array and reverse the order of the original array with no errors.
@@ -47,11 +63,48 @@ This addresses the issue because the test case `testReverse2` expected value for
 
 ## `-depth option`
 
-<img width="555" alt="Screen Shot 2023-11-04 at 6 57 30 PM" src="https://github.com/shinaegyo/cse15l-lab3/assets/137027086/4859ee20-129b-44c1-8b6c-b1a915468ca7">
+```
+jamesshin@Jamess-MacBook-Pro docsearch-main % find ./technical/government/Env_Prot_Agen -depth
+./technical/government/Env_Prot_Agen/multi102902.txt
+./technical/government/Env_Prot_Agen/section-by-section_summary.txt
+./technical/government/Env_Prot_Agen/jeffordslieberm.txt
+./technical/government/Env_Prot_Agen/final.txt
+./technical/government/Env_Prot_Agen/ctf7-10.txt
+./technical/government/Env_Prot_Agen/ctf1-6.txt
+./technical/government/Env_Prot_Agen/ro_clear_skies_book.txt
+./technical/government/Env_Prot_Agen/ctm4-10.txt
+./technical/government/Env_Prot_Agen/1-3_meth_901.txt
+./technical/government/Env_Prot_Agen/atx1-6.txt
+./technical/government/Env_Prot_Agen/tech_sectiong.txt
+./technical/government/Env_Prot_Agen/bill.txt
+./technical/government/Env_Prot_Agen/nov1.txt
+./technical/government/Env_Prot_Agen/tech_adden.txt
+./technical/government/Env_Prot_Agen
+```
 
 The depth option performs a depth-first search while traversing the directory and lists the files in depth-first search order. The depth option is useful in `find ./technical/government/Env_Prot_Agen` because it ensured the deepest files were processed first, which is beneficial for specific order of directory processing.
 
-<img width="650" alt="Screen Shot 2023-11-05 at 2 52 06 PM" src="https://github.com/shinaegyo/lab-report-3/assets/137027086/b4d58088-32ea-4f05-8cbf-8fa4c3db1cb1">
+```
+jamesshin@Jamess-MacBook-Pro docsearch-main % find ./technical/government/About_LSC -depth 
+./technical/government/About_LSC/LegalServCorp_v_VelazquezSyllabus.txt
+./technical/government/About_LSC/Progress_report.txt
+./technical/government/About_LSC/Strategic_report.txt
+./technical/government/About_LSC/Comments_on_semiannual.txt
+./technical/government/About_LSC/Special_report_to_congress.txt
+./technical/government/About_LSC/CONFIG_STANDARDS.txt
+./technical/government/About_LSC/commission_report.txt
+./technical/government/About_LSC/LegalServCorp_v_VelazquezDissent.txt
+./technical/government/About_LSC/ONTARIO_LEGAL_AID_SERIES.txt
+./technical/government/About_LSC/LegalServCorp_v_VelazquezOpinion.txt
+./technical/government/About_LSC/diversity_priorities.txt
+./technical/government/About_LSC/reporting_system.txt
+./technical/government/About_LSC/State_Planning_Report.txt
+./technical/government/About_LSC/Protocol_Regarding_Access.txt
+./technical/government/About_LSC/ODonnell_et_al_v_LSCdecision.txt
+./technical/government/About_LSC/conference_highlights.txt
+./technical/government/About_LSC/State_Planning_Special_Report.txt
+./technical/government/About_LSC
+```
 
 
 The depth option performs a depth-first search while traversing the directory and lists the files in depth-first search order. The depth option is useful in `find ./technical/government/About_LSC` because it ensured the deepest files were processed first, which is beneficial for specific order of directory processing.
@@ -59,31 +112,97 @@ The depth option performs a depth-first search while traversing the directory an
 
 ## `-name option`
 
-<img width="532" alt="Screen Shot 2023-11-04 at 6 20 17 PM" src="https://github.com/shinaegyo/cse15l-lab3/assets/137027086/d4f24ca5-2cdf-4552-a381-e7467ef151ce">
+```
+jamesshin@Jamess-MacBook-Pro docsearch-main % find ./technical/government -name "Session*"
+./technical/government/Alcohol_Problems/Session2-PDF.txt
+./technical/government/Alcohol_Problems/Session3-PDF.txt
+./technical/government/Alcohol_Problems/Session4-PDF.txt
+```
 
 The name option is used to search for files or directories based on their names. In `find ./technical/government - name "Session*"`, it listed all the files with name "Session" and it is useful for locating files based on their names.
 
-<img width="636" alt="Screen Shot 2023-11-04 at 6 20 09 PM" src="https://github.com/shinaegyo/cse15l-lab3/assets/137027086/35317d75-900d-46a0-b314-526e89b8fa83">
+```
+jamesshin@Jamess-MacBook-Pro docsearch-main % find ./technical/government/Alcohol_Problems -name "Session*"
+./technical/government/Alcohol_Problems/Session2-PDF.txt
+./technical/government/Alcohol_Problems/Session3-PDF.txt
+./technical/government/Alcohol_Problems/Session4-PDF.txt
+```
 
 The name option is used to search for files or directories based on their names. In `find ./technical/government/Alcohol_Problems - name "Session*"`, it resulted in the same output as the one above with a different path and it is useful because it listed out all the files with the name "Session" for locating the files.
 
 ## `-type option`
 
-<img width="470" alt="-type f" src="https://github.com/shinaegyo/cse15l-lab3/assets/137027086/acf133c0-6185-4ded-9ac6-840ffccb05af">
+```
+jamesshin@Jamess-MacBook-Pro docsearch-main % find ./technical/911report -type f 
+./technical/911report/chapter-13.4.txt
+./technical/911report/chapter-13.5.txt
+./technical/911report/chapter-13.1.txt
+./technical/911report/chapter-13.2.txt
+./technical/911report/chapter-13.3.txt
+./technical/911report/chapter-3.txt
+./technical/911report/chapter-2.txt
+./technical/911report/chapter-1.txt
+./technical/911report/chapter-5.txt
+./technical/911report/chapter-6.txt
+./technical/911report/chapter-7.txt
+./technical/911report/chapter-9.txt
+./technical/911report/chapter-8.txt
+./technical/911report/preface.txt
+./technical/911report/chapter-12.txt
+./technical/911report/chapter-10.txt
+./technical/911report/chapter-11.txt
+```
 
 The type option is used to specify the type of file to search for such as -type f for searching for regular files and -type d for directories. `In find ./technical/911report -type f`, it displayed all the regular files within this directory which helped to narrow down the specific file type.
 
-<img width="473" alt="-type d" src="https://github.com/shinaegyo/cse15l-lab3/assets/137027086/6dbf53d4-9ac1-4d0e-909f-cf19213af80b">
+```
+jamesshin@Jamess-MacBook-Pro docsearch-main % find ./technical/911report -type d
+./technical/911report
+```
 
 The type option is used to specify the type of file to search for such as -type f for searching for regular files and -type d for directories. `In find ./technical/911report -type d`, it displayed the directory which helped to see the current directory.
 
 ## `-s option`
 
-<img width="545" alt="-s option Env_Prot_Agen" src="https://github.com/shinaegyo/cse15l-lab3/assets/137027086/0b64315b-bc01-4114-8e74-57fd2eddb164">
+```
+jamesshin@Jamess-MacBook-Pro docsearch-main % find -s ./technical/government/Env_Prot_Agen 
+./technical/government/Env_Prot_Agen
+./technical/government/Env_Prot_Agen/1-3_meth_901.txt
+./technical/government/Env_Prot_Agen/atx1-6.txt
+./technical/government/Env_Prot_Agen/bill.txt
+./technical/government/Env_Prot_Agen/ctf1-6.txt
+./technical/government/Env_Prot_Agen/ctf7-10.txt
+./technical/government/Env_Prot_Agen/ctm4-10.txt
+./technical/government/Env_Prot_Agen/final.txt
+./technical/government/Env_Prot_Agen/jeffordslieberm.txt
+./technical/government/Env_Prot_Agen/multi102902.txt
+./technical/government/Env_Prot_Agen/nov1.txt
+./technical/government/Env_Prot_Agen/ro_clear_skies_book.txt
+./technical/government/Env_Prot_Agen/section-by-section_summary.txt
+./technical/government/Env_Prot_Agen/tech_adden.txt
+./technical/government/Env_Prot_Agen/tech_sectiong.txt
+```
 
 The `-s option` traverses the file hierarchies in alphabetical order within each directory. In `find -s ./technical/government/Env_Prot_Agen`, it lists all the files inside the directory in alphabetical order which helps to organize and easily find files.
 
-<img width="533" alt="-s option post_rate_comm" src="https://github.com/shinaegyo/cse15l-lab3/assets/137027086/19ced74c-71ae-4185-8c68-3d7ed21bf8e8">
+```
+jamesshin@Jamess-MacBook-Pro docsearch-main % find -s ./technical/government/Post_Rate_Comm 
+./technical/government/Post_Rate_Comm
+./technical/government/Post_Rate_Comm/Cohenetal_Cost_Function.txt
+./technical/government/Post_Rate_Comm/Cohenetal_CreamSkimming.txt
+./technical/government/Post_Rate_Comm/Cohenetal_DeliveryCost.txt
+./technical/government/Post_Rate_Comm/Cohenetal_RuralDelivery.txt
+./technical/government/Post_Rate_Comm/Cohenetal_Scale.txt
+./technical/government/Post_Rate_Comm/Cohenetal_comparison.txt
+./technical/government/Post_Rate_Comm/Gleiman_EMASpeech.txt
+./technical/government/Post_Rate_Comm/Gleiman_gca2000.txt
+./technical/government/Post_Rate_Comm/Mitchell_6-17-Mit.txt
+./technical/government/Post_Rate_Comm/Mitchell_RMVancouver.txt
+./technical/government/Post_Rate_Comm/Mitchell_spyros-first-class.txt
+./technical/government/Post_Rate_Comm/Redacted_Study.txt
+./technical/government/Post_Rate_Comm/ReportToCongress2002WEB.txt
+./technical/government/Post_Rate_Comm/WolakSpeech_usps.txt
+```
 
 The `-s option` traverses the file hierarchies in alphabetical order within each directory. In `find -s ./technical/government/Post_Rate_Comm`, it lists all the files inside the directory in alphabetical order which helps to organize and easily find files.
 
